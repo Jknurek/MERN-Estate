@@ -1,24 +1,45 @@
-import React from "react";
+import { FaSearch } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <nav className="flex justify-between ml-12 p-2">
-      <Link to="/">
-        <div>Estatify</div>
-      </Link>
-      <ul className="flex gap-x-12 mr-12">
-        <li>
-          <Link to="/about">About</Link>
-        </li>
-        <li>
-          <Link to="/sign-in">Sign In</Link>
-        </li>
-        <li>
-          <Link to="/sign-up">Sign Up</Link>
-        </li>
-      </ul>
-    </nav>
+    <header className="bg-slate-200 shadow-md">
+      <div className="flex justify-between items-center  p-3">
+        <div className="ml-12">
+          <Link to="/">
+            <h1 className="font-bold text-sm sm:text-xl flex flex-wrap">
+              <span className="text-slate-500">Knurek </span>
+              <span className="text-slate-700">Estate</span>
+            </h1>
+          </Link>
+        </div>
+        <form className="bg-slate-100 p-3 rounded-lg flex items-center">
+          <input
+            type="text"
+            placeholder="search"
+            className="bg-transparent focus: outline-none w-24 sm:w-64"
+          />
+          <FaSearch className="text-slate-500" />
+        </form>
+        <ul className="flex gap-4 mr-12">
+          <Link to="/">
+            <li className="hidden sm:inline text-slate-700 hover:underline">
+              Home
+            </li>
+          </Link>
+          <Link to="/about">
+            <li className="hidden sm:inline text-slate-700 hover:underline">
+              About
+            </li>
+          </Link>
+          <Link to="/sign-in">
+            <li className="hidden sm:inline text-slate-700 hover:underline">
+              Sign In
+            </li>
+          </Link>
+        </ul>
+      </div>
+    </header>
   );
 };
 
